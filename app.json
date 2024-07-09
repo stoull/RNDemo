@@ -1,4 +1,6 @@
 {
   "name": "RNDemo",
-  "displayName": "RNDemo"
+  "displayName": "RNDemo",
+  "versionNumStr": "0.0.1",
+  "specName": "RNDemo"
 }
