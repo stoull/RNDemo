@@ -18,6 +18,11 @@
 		C94E743A2C3D365E007311ED /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C94E74362C3D365E007311ED /* SceneDelegate.m */; };
 		C94E743B2C3D365E007311ED /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94E74392C3D365E007311ED /* ViewController.m */; };
 		C94E743D2C3D3664007311ED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C94E743C2C3D3664007311ED /* AppDelegate.m */; };
+		C94E74402C3E2AB6007311ED /* common.ios.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = C94E743F2C3E2AB6007311ED /* common.ios.jsbundle */; };
+		C94E744A2C3E2AC1007311ED /* business.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = C94E74482C3E2AC1007311ED /* business.jsbundle */; };
+		C94E744D2C3E2C67007311ED /* RNPackageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = C94E744C2C3E2C67007311ED /* RNPackageLoader.m */; };
+		C94E74502C3E2DB0007311ED /* RNPackage.m in Sources */ = {isa = PBXBuildFile; fileRef = C94E744F2C3E2DB0007311ED /* RNPackage.m */; };
+		C94E74542C3E6BF0007311ED /* RNRootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C94E74532C3E6BF0007311ED /* RNRootVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +58,15 @@
 		C94E74382C3D365E007311ED /* SceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SceneDelegate.h; path = RNDemo/SceneDelegate.h; sourceTree = "<group>"; };
 		C94E74392C3D365E007311ED /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = RNDemo/ViewController.m; sourceTree = "<group>"; };
 		C94E743C2C3D3664007311ED /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = RNDemo/AppDelegate.m; sourceTree = "<group>"; };
+		C94E743F2C3E2AB6007311ED /* common.ios.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = common.ios.jsbundle; path = ../bundle/ios/common.ios.jsbundle; sourceTree = "<group>"; };
+		C94E74482C3E2AC1007311ED /* business.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = business.jsbundle; path = ../bundle/ios/RNDemo/business.jsbundle; sourceTree = "<group>"; };
+		C94E744B2C3E2C67007311ED /* RNPackageLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNPackageLoader.h; sourceTree = "<group>"; };
+		C94E744C2C3E2C67007311ED /* RNPackageLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNPackageLoader.m; sourceTree = "<group>"; };
+		C94E744E2C3E2DB0007311ED /* RNPackage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNPackage.h; sourceTree = "<group>"; };
+		C94E744F2C3E2DB0007311ED /* RNPackage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNPackage.m; sourceTree = "<group>"; };
+		C94E74512C3E3B26007311ED /* RCTBridge+Exports.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RCTBridge+Exports.h"; sourceTree = "<group>"; };
+		C94E74522C3E6BF0007311ED /* RNRootVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNRootVC.h; sourceTree = "<group>"; };
+		C94E74532C3E6BF0007311ED /* RNRootVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNRootVC.m; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -96,12 +110,20 @@
 		13B07FAE1A68108700A75B9A /* RNDemo */ = {
 			isa = PBXGroup;
 			children = (
+				C94E743E2C3E2AA7007311ED /* bundles */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				C94E743C2C3D3664007311ED /* AppDelegate.m */,
 				C94E74382C3D365E007311ED /* SceneDelegate.h */,
 				C94E74362C3D365E007311ED /* SceneDelegate.m */,
 				C94E74372C3D365E007311ED /* ViewController.h */,
 				C94E74392C3D365E007311ED /* ViewController.m */,
+				C94E74522C3E6BF0007311ED /* RNRootVC.h */,
+				C94E74532C3E6BF0007311ED /* RNRootVC.m */,
+				C94E74512C3E3B26007311ED /* RCTBridge+Exports.h */,
+				C94E744B2C3E2C67007311ED /* RNPackageLoader.h */,
+				C94E744C2C3E2C67007311ED /* RNPackageLoader.m */,
+				C94E744E2C3E2DB0007311ED /* RNPackage.h */,
+				C94E744F2C3E2DB0007311ED /* RNPackage.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
@@ -162,6 +184,15 @@
 				89C6BE57DB24E9ADA2F236DE /* Pods-RNDemo-RNDemoTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		C94E743E2C3E2AA7007311ED /* bundles */ = {
+			isa = PBXGroup;
+			children = (
+				C94E743F2C3E2AB6007311ED /* common.ios.jsbundle */,
+				C94E74482C3E2AC1007311ED /* business.jsbundle */,
+			);
+			name = bundles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +292,8 @@
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				6616C789A8B327102FF45ABF /* PrivacyInfo.xcprivacy in Resources */,
 				C94E74352C3D3487007311ED /* Main.storyboard in Resources */,
+				C94E74402C3E2AB6007311ED /* common.ios.jsbundle in Resources */,
+				C94E744A2C3E2AC1007311ED /* business.jsbundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,7 +443,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C94E74502C3E2DB0007311ED /* RNPackage.m in Sources */,
+				C94E744D2C3E2C67007311ED /* RNPackageLoader.m in Sources */,
 				C94E743A2C3D365E007311ED /* SceneDelegate.m in Sources */,
+				C94E74542C3E6BF0007311ED /* RNRootVC.m in Sources */,
 				C94E743B2C3D365E007311ED /* ViewController.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 				C94E743D2C3D3664007311ED /* AppDelegate.m in Sources */,

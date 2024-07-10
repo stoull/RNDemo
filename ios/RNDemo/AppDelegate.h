@@ -6,8 +6,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RNPackageLoader.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 @property (strong, nonatomic) UIWindow *window;
+
+@property (nonatomic) RNPackageLoader *rnPkgLoader;
 @end
 
