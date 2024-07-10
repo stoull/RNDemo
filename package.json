@@ -11,8 +11,10 @@
     "build:ios": "react-native bundle --platform ios --config metro.config.js --dev true --entry-file index.js --bundle-output ./bundle/ios/main.ios.jsbundle --assets-dest ./bundle/ios/ --reset-cache",
     "build:ios:common": "node ./splitconfig/writeConfig.js && react-native bundle --platform ios --config metro.common.config.js --dev false --entry-file common.js --bundle-output ./bundle/ios/common.ios.jsbundle --assets-dest ./bundle/ios/ --minify false",
     "build:ios:business": "react-native bundle --platform ios --config metro.business.config.js --dev false --entry-file index.js --bundle-output './bundle/ios/RNDemo/business.jsbundle' --assets-dest './bundle/ios/RNDemo/' --minify false",
+    "build:ios:shinetoolskit": "react-native bundle --platform ios --config metro.business.config.js --dev false --entry-file index-shinetoolskit.js --bundle-output './bundle/ios/RNDemo/shinetoolskit.jsbundle' --minify false",
     "build:android:common": "node ./splitconfig/writeConfig.js && react-native bundle --platform android --dev false --entry-file ./common.js --bundle-output ./bundle/android/common.android.bundle --assets-dest ./bundle/android/  --config ./metro.common.config.js  --minify false",
-    "build:android:business": "node ./splitconfig/writeConfig.js && react-native bundle --platform android --dev false --entry-file ./index.js --bundle-output \"./bundle/android/RNDemo/index.android.bundle\" --assets-dest \"./bundle/android/RNDemo/\"  --config ./metro.business.config.js  --minify false"
+    "build:android:business": "react-native bundle --platform android --dev false --entry-file ./index.js --bundle-output \"./bundle/android/RNDemo/index.android.bundle\" --assets-dest \"./bundle/android/RNDemo/\"  --config ./metro.business.config.js  --minify false",
+    "build:android:shinetoolskit": "react-native bundle --platform android --dev false --entry-file ./index-shinetoolskit.js --bundle-output \"./bundle/android/RNDemo/shinetoolskit.android.bundle\" --assets-dest \"./bundle/android/RNDemo/\"  --config ./metro.business.config.js  --minify false"
   },
   "dependencies": {
     "react": "18.2.0",

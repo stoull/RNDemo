@@ -31,8 +31,8 @@
     case RNPackageTypeBusiness:
       nName = @"RNDemo";
       break;
-    case RNPackageTypeBusiness2:
-      nName = @"RNDemo";
+    case RNPackageTypeShineToolsKit:
+      nName = @"shinetoolskit";
       break;
     default:
       break;
@@ -49,8 +49,8 @@
     case RNPackageTypeBusiness:
       nName = @"business";
       break;
-    case RNPackageTypeBusiness2:
-      nName = @"business";
+    case RNPackageTypeShineToolsKit:
+      nName = @"shinetoolskit";
       break;
     default:
       break;

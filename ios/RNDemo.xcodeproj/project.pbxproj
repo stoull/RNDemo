@@ -23,6 +23,7 @@
 		C94E744D2C3E2C67007311ED /* RNPackageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = C94E744C2C3E2C67007311ED /* RNPackageLoader.m */; };
 		C94E74502C3E2DB0007311ED /* RNPackage.m in Sources */ = {isa = PBXBuildFile; fileRef = C94E744F2C3E2DB0007311ED /* RNPackage.m */; };
 		C94E74542C3E6BF0007311ED /* RNRootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C94E74532C3E6BF0007311ED /* RNRootVC.m */; };
+		C9F47B172C3E8CE000256C46 /* shinetoolskit.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = C9F47B162C3E8CE000256C46 /* shinetoolskit.jsbundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		C94E74512C3E3B26007311ED /* RCTBridge+Exports.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RCTBridge+Exports.h"; sourceTree = "<group>"; };
 		C94E74522C3E6BF0007311ED /* RNRootVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNRootVC.h; sourceTree = "<group>"; };
 		C94E74532C3E6BF0007311ED /* RNRootVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNRootVC.m; sourceTree = "<group>"; };
+		C9F47B162C3E8CE000256C46 /* shinetoolskit.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = shinetoolskit.jsbundle; path = ../bundle/ios/RNDemo/shinetoolskit.jsbundle; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -190,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				C94E743F2C3E2AB6007311ED /* common.ios.jsbundle */,
+				C9F47B162C3E8CE000256C46 /* shinetoolskit.jsbundle */,
 				C94E74482C3E2AC1007311ED /* business.jsbundle */,
 			);
 			name = bundles;
@@ -288,6 +291,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9F47B172C3E8CE000256C46 /* shinetoolskit.jsbundle in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				6616C789A8B327102FF45ABF /* PrivacyInfo.xcprivacy in Resources */,

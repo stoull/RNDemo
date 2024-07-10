@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 typedef enum : NSUInteger {
   RNPackageTypeCommod,
   RNPackageTypeBusiness,
-  RNPackageTypeBusiness2,
+  RNPackageTypeShineToolsKit,
 } RNPackageType;
 
 @interface RNPackage : NSObject
