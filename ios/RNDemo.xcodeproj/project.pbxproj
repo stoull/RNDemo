@@ -23,6 +23,8 @@
 		C94E744D2C3E2C67007311ED /* RNPackageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = C94E744C2C3E2C67007311ED /* RNPackageLoader.m */; };
 		C94E74502C3E2DB0007311ED /* RNPackage.m in Sources */ = {isa = PBXBuildFile; fileRef = C94E744F2C3E2DB0007311ED /* RNPackage.m */; };
 		C94E74542C3E6BF0007311ED /* RNRootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C94E74532C3E6BF0007311ED /* RNRootVC.m */; };
+		C9D0B6A82C3FD42700147B37 /* RNNativeModuleAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D0B6A72C3FD42700147B37 /* RNNativeModuleAPI.m */; };
+		C9D0B6AC2C3FDA8B00147B37 /* RNNativeTunnel.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D0B6AB2C3FDA8B00147B37 /* RNNativeTunnel.m */; };
 		C9F47B172C3E8CE000256C46 /* shinetoolskit.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = C9F47B162C3E8CE000256C46 /* shinetoolskit.jsbundle */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +70,10 @@
 		C94E74512C3E3B26007311ED /* RCTBridge+Exports.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RCTBridge+Exports.h"; sourceTree = "<group>"; };
 		C94E74522C3E6BF0007311ED /* RNRootVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNRootVC.h; sourceTree = "<group>"; };
 		C94E74532C3E6BF0007311ED /* RNRootVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNRootVC.m; sourceTree = "<group>"; };
+		C9D0B6A62C3FD40E00147B37 /* RNJSModuleAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNJSModuleAPI.h; sourceTree = "<group>"; };
+		C9D0B6A72C3FD42700147B37 /* RNNativeModuleAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNNativeModuleAPI.m; sourceTree = "<group>"; };
+		C9D0B6AA2C3FDA8B00147B37 /* RNNativeTunnel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNNativeTunnel.h; sourceTree = "<group>"; };
+		C9D0B6AB2C3FDA8B00147B37 /* RNNativeTunnel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNNativeTunnel.m; sourceTree = "<group>"; };
 		C9F47B162C3E8CE000256C46 /* shinetoolskit.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = shinetoolskit.jsbundle; path = ../bundle/ios/RNDemo/shinetoolskit.jsbundle; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -112,6 +118,8 @@
 		13B07FAE1A68108700A75B9A /* RNDemo */ = {
 			isa = PBXGroup;
 			children = (
+				C9D0B6A22C3FC26300147B37 /* RN功能相关 */,
+				C9D0B6A12C3FC24500147B37 /* RN包加载相关 */,
 				C94E743E2C3E2AA7007311ED /* bundles */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				C94E743C2C3D3664007311ED /* AppDelegate.m */,
@@ -119,13 +127,6 @@
 				C94E74362C3D365E007311ED /* SceneDelegate.m */,
 				C94E74372C3D365E007311ED /* ViewController.h */,
 				C94E74392C3D365E007311ED /* ViewController.m */,
-				C94E74522C3E6BF0007311ED /* RNRootVC.h */,
-				C94E74532C3E6BF0007311ED /* RNRootVC.m */,
-				C94E74512C3E3B26007311ED /* RCTBridge+Exports.h */,
-				C94E744B2C3E2C67007311ED /* RNPackageLoader.h */,
-				C94E744C2C3E2C67007311ED /* RNPackageLoader.m */,
-				C94E744E2C3E2DB0007311ED /* RNPackage.h */,
-				C94E744F2C3E2DB0007311ED /* RNPackage.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
@@ -196,6 +197,31 @@
 				C94E74482C3E2AC1007311ED /* business.jsbundle */,
 			);
 			name = bundles;
+			sourceTree = "<group>";
+		};
+		C9D0B6A12C3FC24500147B37 /* RN包加载相关 */ = {
+			isa = PBXGroup;
+			children = (
+				C94E74522C3E6BF0007311ED /* RNRootVC.h */,
+				C94E74532C3E6BF0007311ED /* RNRootVC.m */,
+				C94E74512C3E3B26007311ED /* RCTBridge+Exports.h */,
+				C94E744B2C3E2C67007311ED /* RNPackageLoader.h */,
+				C94E744C2C3E2C67007311ED /* RNPackageLoader.m */,
+				C94E744E2C3E2DB0007311ED /* RNPackage.h */,
+				C94E744F2C3E2DB0007311ED /* RNPackage.m */,
+			);
+			name = "RN包加载相关";
+			sourceTree = "<group>";
+		};
+		C9D0B6A22C3FC26300147B37 /* RN功能相关 */ = {
+			isa = PBXGroup;
+			children = (
+				C9D0B6AA2C3FDA8B00147B37 /* RNNativeTunnel.h */,
+				C9D0B6AB2C3FDA8B00147B37 /* RNNativeTunnel.m */,
+				C9D0B6A62C3FD40E00147B37 /* RNJSModuleAPI.h */,
+				C9D0B6A72C3FD42700147B37 /* RNNativeModuleAPI.m */,
+			);
+			name = "RN功能相关";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -451,7 +477,9 @@
 				C94E744D2C3E2C67007311ED /* RNPackageLoader.m in Sources */,
 				C94E743A2C3D365E007311ED /* SceneDelegate.m in Sources */,
 				C94E74542C3E6BF0007311ED /* RNRootVC.m in Sources */,
+				C9D0B6AC2C3FDA8B00147B37 /* RNNativeTunnel.m in Sources */,
 				C94E743B2C3D365E007311ED /* ViewController.m in Sources */,
+				C9D0B6A82C3FD42700147B37 /* RNNativeModuleAPI.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 				C94E743D2C3D3664007311ED /* AppDelegate.m in Sources */,
 			);

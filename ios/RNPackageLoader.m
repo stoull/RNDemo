@@ -37,7 +37,7 @@
   if (jsData == nil) {
     return;
   }
-  [self.bridge.batchedBridge executeApplicationScript:jsData url:jsBundleUrl async:false];
+  [self.bridge.batchedBridge executeApplicationScript:jsData url:jsBundleUrl async:true];
 }
 
 - (void)bridgeDidFinishLoading:(NSNotification *)noti {
