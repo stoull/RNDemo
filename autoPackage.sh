@@ -60,6 +60,7 @@ while getopts "ai" optname
 if [ "$isPackAndroid" = "YES" ];then
     npm run build:android:common
     npm run build:android:business
+    npm run build:android:shinetoolskit
 
     # 自动压缩可用于版本更新上传的andriod zip文件
     appDisplayName=$(cat ./app.json | grep displayName | sed 's/.*"displayName": "\(.*\)",/\1/')
@@ -72,6 +73,7 @@ fi
 if [ "$isPackiOS" = "YES" ];then
     npm run build:ios:common
     npm run build:ios:business
+    npm run build:ios:shinetoolskit
 
     # 自动压缩可用于版本更新上传的ios zip文件
     appDisplayName=$(cat ./app.json | grep displayName | sed 's/.*"displayName": "\(.*\)",/\1/')
