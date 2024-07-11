@@ -1,22 +1,31 @@
 package com.rndemo
 
-import com.facebook.react.ReactActivity
-import com.facebook.react.ReactActivityDelegate
-import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint.fabricEnabled
-import com.facebook.react.defaults.DefaultReactActivityDelegate
+import android.annotation.SuppressLint
+import android.content.Intent
+import android.os.Bundle
+import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
+import com.facebook.react.bridge.Arguments
+import com.rndemo.react.DomeNativeModule
+import com.rndemo.react.ReactContainerActivity
 
-class MainActivity : ReactActivity() {
+class MainActivity : AppCompatActivity() {
 
-  /**
-   * Returns the name of the main component registered from JavaScript. This is used to schedule
-   * rendering of the component.
-   */
-  override fun getMainComponentName(): String = "RNDemo"
+    @SuppressLint("MissingInflatedId")
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_dome)
 
-  /**
-   * Returns the instance of the [ReactActivityDelegate]. We use [DefaultReactActivityDelegate]
-   * which allows you to enable New Architecture with a single boolean flags [fabricEnabled]
-   */
-  override fun createReactActivityDelegate(): ReactActivityDelegate =
-      DefaultReactActivityDelegate(this, mainComponentName, fabricEnabled)
+        //向RN发送事件
+        findViewById<Button>(R.id.btn_send_event).setOnClickListener{
+            val map = Arguments.createMap()
+            map.putString("content", "Hello from Android")
+            DomeNativeModule.instance.emitJS(map)
+        }
+
+        //加载业务页面
+        findViewById<Button>(R.id.btn_load_business).setOnClickListener {
+            startActivity(Intent(this, ReactContainerActivity::class.java))
+        }
+    }
 }
