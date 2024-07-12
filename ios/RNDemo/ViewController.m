@@ -11,7 +11,6 @@
 #import "RNNativeTunnel.h"
 
 @interface ViewController ()
-@property (nonatomic, strong) RNNativeTunnel *tunnel;
 @end
 
 @implementation ViewController
@@ -25,7 +24,7 @@
 
 -(void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:animated];
-  self.tunnel = [[RNNativeTunnel alloc] init];
+
 }
 
 - (IBAction)showNativeVC:(UIButton *)sender {
@@ -49,8 +48,6 @@
 
 - (IBAction)callRNModuleMethod:(UIButton *)sender {
   
-  
-  
   AppDelegate *appDelegate = (AppDelegate *)UIApplication.sharedApplication.delegate;
   NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
   [formatter setDateFormat:@"HH:mm:ss"];
@@ -62,16 +59,27 @@
   NSLog(@"加载RN包结束 ShineToolsKit: %@", str2);
 
 }
+
 - (IBAction)callJSMethod:(id)sender {
-  
-  AppDelegate *appDelegate = (AppDelegate *)UIApplication.sharedApplication.delegate;
-  
-  [RNNativeTunnel.sharedInstance callJSMethod];
-  
-  
-  
-//  [appDelegate.rnPkgLoader.bridge enqueueJSCall:@"RNJSModuleAPI" method:@"stationSetupSteps" args:@[@"step2", @"stpe6"] completion:^{
-//  }];
+//  [RNNativeTunnel.sharedInstance callJS:@"deivceInfoForSN" params:@{@"sn": @"AAM0000000"}];
+  [RNNativeTunnel.sharedInstance callJS:@"setupStationSteps" params:@{@"sn": @"AAM0000000"} success:^(NSDictionary * _Nonnull resDic) {
+    [self showAlert:true message:[resDic description]];
+  } failure:^(NSString * _Nonnull errorMsg) {
+    [self showAlert:false message:errorMsg];
+  }];
+}
+
+- (void)showAlert:(BOOL)isSuccess message:(NSString *)msg {
+  dispatch_async(dispatch_get_main_queue(), ^{
+    NSString *title = isSuccess ? @"成功" : @"失败";
+    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:title message:msg preferredStyle: UIAlertControllerStyleAlert];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+      
+      [alertVC dismissViewControllerAnimated:true completion:nil];
+    }];
+    [alertVC addAction:okAction];
+    [self presentViewController:alertVC animated:true completion:nil];
+  });
 }
 
 

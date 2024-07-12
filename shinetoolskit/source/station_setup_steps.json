@@ -1,0 +1,84 @@
+{
+    "deviceSteps": {
+        "YTL": ["AddUser", "AddStation", "AddDevice", "UpgradeDataLogger", "UpgradeDevice",
+         "NetConfig", "QuickSetup", "InstallationDiagnosis", "StationPictures",
+          "InstallationInformation"],
+        "RGL": ["AddUser", "AddStation", "AddDevice", "UpgradeDataLogger", "NetConfig",
+         "QuickSetup", "InstallationDiagnosis", "InstallationInformation"],
+        "ZVL": ["AddUser", "AddStation", "AddDevice", "NetConfig", "QuickSetup",
+         "InstallationDiagnosis", "StationPictures", "InstallationInformation"],
+        "AAM": ["AddUser", "AddStation", "AddDevice", "NetConfig", "InstallationInformation"]
+    },
+    "steps" : [
+      {
+        "isFinished" : false,
+        "id" : "AddUser",
+        "isSelected" : false,
+        "name" : "添加用户",
+        "stepIndex" : 1
+      },
+      {
+        "isFinished" : false,
+        "id" : "AddStation",
+        "isSelected" : false,
+        "name" : "添加电站",
+        "stepIndex" : 2
+      },
+      {
+        "isFinished" : false,
+        "id" : "AddDevice",
+        "isSelected" : false,
+        "name" : "添加设备",
+        "stepIndex" : 3
+      },
+      {
+        "isFinished" : false,
+        "id" : "UpgradeDataLogger",
+        "isSelected" : false,
+        "name" : "采集器升级",
+        "stepIndex" : 4
+      },
+      {
+        "isFinished" : false,
+        "id" : "UpgradeDevice",
+        "isSelected" : false,
+        "name" : "设备升级",
+        "stepIndex" : 5
+      },
+      {
+        "isFinished" : false,
+        "id" : "NetConfig",
+        "isSelected" : false,
+        "name" : "网络配置",
+        "stepIndex" : 6
+      },
+      {
+        "isFinished" : false,
+        "id" : "QuickSetup",
+        "isSelected" : false,
+        "name" : "快速设置",
+        "stepIndex" : 7
+      },
+      {
+        "isFinished" : false,
+        "id" : "InstallationDiagnosis",
+        "isSelected" : false,
+        "name" : "安装诊断",
+        "stepIndex" : 8
+      },
+      {
+        "isFinished" : false,
+        "id" : "StationPictures",
+        "isSelected" : false,
+        "name" : "电站照片",
+        "stepIndex" : 9
+      },
+      {
+        "isFinished" : false,
+        "id" : "InstallationInformation",
+        "isSelected" : false,
+        "name" : "安装信息",
+        "stepIndex" : 10
+      }
+    ]
+  }

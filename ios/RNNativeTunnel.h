@@ -12,7 +12,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface RNNativeTunnel : RCTEventEmitter <RCTBridgeModule>
-- (void)callJSMethod;
+- (void)callJS:(NSString *)methodName params:(NSDictionary*)params;
+
+- (void)callJS:(NSString *)methodName params:(NSDictionary*)params success:(void (^)(NSDictionary *resDic))success failure:(void (^)(NSString *errorMsg))failure;
 
 + (instancetype)sharedInstance;
 @end

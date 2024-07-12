@@ -18,10 +18,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="JgV-eS-Uds">
-                                <rect key="frame" x="137.33333333333334" y="240.33333333333331" width="118.33333333333334" height="251.33333333333331"/>
+                                <rect key="frame" x="67.666666666666686" y="240.33333333333331" width="258" height="251.33333333333331"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ori-cy-5dn">
-                                        <rect key="frame" x="0.0" y="0.0" width="118.33333333333333" height="40.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="258" height="40.333333333333336"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="原生VC"/>
                                         <connections>
@@ -29,25 +29,25 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VRR-d1-jUp">
-                                        <rect key="frame" x="0.0" y="70.333333333333343" width="118.33333333333333" height="40.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="70.333333333333343" width="258" height="40.333333333333343"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="RN模块界面"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="推出RN有界面的模块"/>
                                         <connections>
                                             <action selector="showRNModuleVC:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="uGU-8u-HkV"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oN3-Cm-QPR">
-                                        <rect key="frame" x="0.0" y="140.66666666666666" width="118.33333333333333" height="40.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="140.66666666666666" width="258" height="40.333333333333343"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="RN模块调用"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="先调用RN一键升级包"/>
                                         <connections>
                                             <action selector="callRNModuleMethod:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="1gb-r9-pdU"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P7E-qW-JuN">
-                                        <rect key="frame" x="0.0" y="210.99999999999997" width="118.33333333333333" height="40.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="210.99999999999997" width="258" height="40.333333333333343"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="调用JS方法"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="请求AAM0000000的建站流程"/>
                                         <connections>
                                             <action selector="callJSMethod:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Pl7-RO-pry"/>
                                         </connections>
