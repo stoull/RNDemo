@@ -26,20 +26,19 @@ const getCacheFile = function (file, path) {
   return cacheFile[path] || 0;
 };
 
-const isPwdFile = (path) => {
-  const cwd = __dirname.split("/").splice(-1, 1).toString();
+const isPwdFile = (filePath) => {
+  // 获取路径中的基础文件名（不带扩展名）
+  const basename = path.basename(filePath, '.js');
 
-  const pathArray = path.split("/");
-  const map = new Map();
-  const reverseMap = new Map();
+  // 将路径分割为数组
+  const pathParts = filePath.split(path.sep);
 
-  pathArray.forEach((it, indx) => {
-    map.set(it, indx);
-    reverseMap.set(indx, it);
-  });
+  // 获取__dirname的最后一部分作为目录名
+  const currentDirName = path.basename(__dirname);
 
-  if (pathArray.length - 2 == map.get(cwd)) {
-    return reverseMap.get(pathArray.length - 1).replace(/\.js/, "");
+  // 检查路径的倒数第二部分是否与__dirname的最后一部分匹配
+  if (pathParts[pathParts.length - 2] === currentDirName) {
+    return basename;
   }
 
   return "";
