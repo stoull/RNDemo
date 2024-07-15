@@ -9,6 +9,6 @@ const shinetoolskit = require('./shinetoolskit/shinetoolskit');
 
 const { ShineToolsKit } = require("./shinetoolskit/shinetoolskit");
 AppRegistry.registerComponent(appName, () => ShineToolsKit);
-
+console.log("ShineToolsKit is running")
 
 shinetoolskit.startListening();

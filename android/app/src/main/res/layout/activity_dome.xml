@@ -4,16 +4,27 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+
+    <Button
+        android:id="@+id/btn_load_build"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="加载建站插件包" />
+
+
     <Button
         android:id="@+id/btn_send_event"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:text="发送事件" />
+        android:text="获取建站JSON" />
+
+
 
     <Button
         android:id="@+id/btn_load_business"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:text="加载业务包" />
+        android:text="加载业务界面包" />
+
 
 </LinearLayout>

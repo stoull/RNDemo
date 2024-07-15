@@ -14,7 +14,7 @@
     "build:ios:shinetoolskit": "react-native bundle --platform ios --config metro.business.config.js --dev false --entry-file index-shinetoolskit.js --bundle-output './bundle/ios/RNDemo/shinetoolskit.jsbundle' --minify false",
     "build:android:common": "node ./splitconfig/writeConfig.js && react-native bundle --platform android --dev false --entry-file ./common.js --bundle-output ./bundle/android/common.android.bundle --assets-dest ./bundle/android/  --config ./metro.common.config.js  --minify false",
     "build:android:business": "react-native bundle --platform android --dev false --entry-file ./index.js --bundle-output \"./bundle/android/RNDemo/index.android.bundle\" --assets-dest \"./bundle/android/RNDemo/\"  --config ./metro.business.config.js  --minify false",
-    "build:android:shinetoolskit": "react-native bundle --platform android --dev false --entry-file ./index-shinetoolskit.js --bundle-output \"./bundle/android/RNDemo/shinetoolskit.android.bundle\" --assets-dest \"./bundle/android/RNDemo/\"  --config ./metro.business.config.js  --minify false"
+    "build:android:shinetoolskit": "react-native bundle --platform android --dev false --entry-file ./index-shinetoolskit.js --bundle-output \"./bundle/android/RNDemo/shinetoolskit.android.bundle\" --assets-dest \"./bundle/android/RNDemo/\"  --config ./metro.shinetoolskit.config.js  --minify false"
   },
   "dependencies": {
     "react": "18.2.0",

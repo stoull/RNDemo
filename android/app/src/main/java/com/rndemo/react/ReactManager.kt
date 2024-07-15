@@ -2,13 +2,14 @@ package com.rndemo.react
 
 import android.annotation.SuppressLint
 import android.app.Application
+import android.util.Log
 import com.facebook.hermes.reactexecutor.HermesExecutorFactory
 import com.facebook.react.PackageList
 import com.facebook.react.ReactInstanceManager
 import com.facebook.react.ReactPackage
-import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.bridge.ReactContext
 import com.facebook.react.common.LifecycleState
+import com.rndemo.utils.BridgeUtils
 
 class ReactManager {
 
@@ -62,11 +63,22 @@ class ReactManager {
                 ReactInstanceManager.ReactInstanceEventListener {
                 override fun onReactContextInitialized(context: ReactContext) {
                     isCommonLoad = true
+                    Log.d("ReactManager", "加载通用包成功 ")
                 }
             })
 
             //加载基础包(可先不加载用到再加载)
             getReactInstanceManager()?.createReactContextInBackground()
+        }
+
+
+        @JvmStatic
+        fun loadBundle(bundleName: String) {
+            val mContext = reactInstanceManager!!.currentReactContext
+            val instance = mContext!!.catalystInstance
+            BridgeUtils.loadScriptFromAsset(
+                mContext, instance, "assets://$bundleName", false
+            )
         }
 
     }

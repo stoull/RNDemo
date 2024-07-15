@@ -12,7 +12,7 @@ class DomeReactPackage : ReactPackage {
      */
     override fun createNativeModules(context: ReactApplicationContext): MutableList<NativeModule> {
         val nativeModules: MutableList<NativeModule> = mutableListOf();
-        nativeModules.add(DomeNativeModule(context))
+        nativeModules.add(RNNativeTunnel(context))
         return nativeModules
     }
 
