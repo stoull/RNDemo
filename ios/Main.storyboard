@@ -39,9 +39,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oN3-Cm-QPR">
                                         <rect key="frame" x="0.0" y="140.66666666666666" width="258" height="40.333333333333343"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="先调用RN一键升级包"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="先加载RN一键升级包"/>
                                         <connections>
-                                            <action selector="callRNModuleMethod:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="1gb-r9-pdU"/>
+                                            <action selector="loadStationSetupPkg:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ngu-7z-VLg"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P7E-qW-JuN">

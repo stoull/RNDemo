@@ -25,7 +25,6 @@ static RNNativeTunnel *_sharedInstance = nil;
 RCT_EXPORT_MODULE();
 
 + (id)allocWithZone:(NSZone *)zone {
-  NSLog(@"RNNativeTunnel allocWithZoneallocWithZoneallocWithZoneallocWithZone");
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
     _sharedInstance = [super allocWithZone:zone];

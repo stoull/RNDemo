@@ -2,5 +2,9 @@
   "moduleName": "RNDemo",
   "versionNumStr": "0.0.1",
   "specName": "RNDemo",
+<<<<<<< HEAD
   "createTimeStr": "2024-7-15 16:27"
+=======
+  "createTimeStr": "2024-7-15 17:48"
+>>>>>>> 85fe3d4 (Modfied the module name of shinetools app)
 }

@@ -2,13 +2,9 @@
  * @format
  */
 
-import {AppRegistry} from 'react-native';
-import {name as appName} from './app.json';
+// import {AppRegistry} from 'react-native';
+// const { ShineToolsKit } = require("./shinetoolskit/shinetoolskit");
+// AppRegistry.registerComponent("shinetools", () => ShineToolsKit);
 
 const shinetoolskit = require('./shinetoolskit/shinetoolskit');
-
-const { ShineToolsKit } = require("./shinetoolskit/shinetoolskit");
-AppRegistry.registerComponent(appName, () => ShineToolsKit);
-console.log("ShineToolsKit is running")
-
 shinetoolskit.startListening();

@@ -1,0 +1,243 @@
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _reactNative = _$$_REQUIRE(_dependencyMap[0]); /**
+                                                      * @format
+                                                      */
+
+  _reactNative.AppRegistry.registerComponent(_$$_REQUIRE(_dependencyMap[1]).name, function () {
+    return _$$_REQUIRE(_dependencyMap[2]).ShineToolsKit;
+  });
+  _$$_REQUIRE(_dependencyMap[2]).startListening();
+},20000000,[3,20000001,20000002]);
+__d(function(global, require, _importDefaultUnused, _importAllUnused, module, exports, _dependencyMapUnused) {
+  module.exports = {
+  "name": "RNDemo",
+  "displayName": "RNDemo",
+  "versionNumStr": "0.0.1",
+  "specName": "RNDemo"
+};
+},20000001,[]);
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _reactNative = _$$_REQUIRE(_dependencyMap[0]);
+  var _jsxRuntime = _$$_REQUIRE(_dependencyMap[1]);
+  var RNNativeTunnel = _reactNative.NativeModules.RNNativeTunnel;
+  var nativeTunnel = new _reactNative.NativeEventEmitter(RNNativeTunnel);
+  var ShineToolsKit = function ShineToolsKit() {
+    return /*#__PURE__*/(0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {});
+  };
+
+  // 开始监听原生调起的方法
+  function startListening() {
+    nativeTunnel.addListener('STATIONSETUP', function (cmd) {
+      console.log("RN ShineToolsKit模块收到: ", cmd);
+      /**
+       * deivceInfoForSN
+        setupStationSteps
+        settingsForStepId
+       */
+
+      var cmdObj = parserCmd(cmd);
+      var methodName = cmdObj.methodName;
+      var params = cmdObj.params;
+      if (methodName === "deivceInfoForSN") {
+        var sn = params.sn;
+        var info = _$$_REQUIRE(_dependencyMap[2]).deivceInfoForSN(sn);
+        responseToNative(methodName, params, info, true);
+      } else if (methodName === "setupStationSteps") {
+        var _sn = params.sn;
+        var _info = _$$_REQUIRE(_dependencyMap[2]).setupStationSteps(_sn);
+        responseToNative(methodName, params, _info, true);
+      } else if (methodName === "settingsForStepId") {
+        var id = cmd['id'];
+        var stepInfo = _$$_REQUIRE(_dependencyMap[2]).settingsForStepId(id);
+        responseToNative(methodName, params, stepInfo, true);
+      }
+    });
+  }
+  function parserCmd(obj) {
+    // return JSON(obj);
+    return obj;
+  }
+  function responseToNative(methodName, params, result, isSuccess) {
+    var res = {
+      "methodName": methodName,
+      "params": params,
+      "result": result,
+      "isSuccess": isSuccess,
+      "message": ""
+    };
+    RNNativeTunnel.processResult(res);
+  }
+  module.exports = {
+    ShineToolsKit: ShineToolsKit,
+    startListening: startListening
+  };
+},20000002,[3,214,20000003]);
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  // const enums = require("./enum");
+  // const StepsJson = require("./source/station_setup_steps.json");
+  // const ModelListJson = require("./source/device_model_list.json");
+  // const Device = require("./device");
+
+  // 根据SN获取设备信息
+  function deivceInfoForSN(sn) {
+    var deviceInfo = _$$_REQUIRE(_dependencyMap[0])(sn);
+    return deviceInfo;
+  }
+
+  // 根据设备SN获取建站流程
+  function setupStationSteps(deviceSn) {
+    var pre3_sn = deviceSn.slice(0, 3);
+    var device_steps = _$$_REQUIRE(_dependencyMap[1]).deviceSteps[pre3_sn];
+    var all_steps = _$$_REQUIRE(_dependencyMap[1]).steps;
+    var steps_for_device = all_steps.filter(function (step) {
+      return device_steps.includes(step.id);
+    });
+    return steps_for_device;
+  }
+
+  // 根据步骤id获取设置项
+  function settingsForStepId(stepId) {}
+  module.exports = {
+    deivceInfoForSN: deivceInfoForSN,
+    setupStationSteps: setupStationSteps,
+    settingsForStepId: settingsForStepId
+  };
+},20000003,[20000004,20000006]);
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  function getdeivceInfoWithSN(sn) {
+    // const type  = deviceModelList[sn]
+    // 这里暂时写死测试
+    return {
+      "sn": "sn",
+      "type": _$$_REQUIRE(_dependencyMap[0]).DeviceType.inverter,
+      "supportedConnectType": _$$_REQUIRE(_dependencyMap[0]).SupportedConnectType.bluetoothAndWifi,
+      "devicePosition": _$$_REQUIRE(_dependencyMap[0]).DevicePosition.in
+    };
+  }
+  module.exports = getdeivceInfoWithSN;
+},20000004,[20000005]);
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  // 设备机型表
+  var DeviceType = Object.freeze({
+    inverter: 0,
+    // 逆变器
+    storage_inverter: 1,
+    // 储能机
+    battery: 2,
+    // 电池
+    data_logger: 3,
+    // 采集器
+    other: 4 // 其他设备
+  });
+
+  // 设备支持的连接方式
+  var SupportedConnectType = Object.freeze({
+    none: 0,
+    // 不支持连接
+    bluetooth: 1,
+    // 只支持蓝牙
+    wifi: 2,
+    // 只支持Wi-Fi
+    bluetoothAndWifi: 3 // 支持 蓝牙、Wi-Fi
+  });
+
+  // 设备支持的连接方式
+  var DevicePosition = Object.freeze({
+    in: 0,
+    // 内置采集器
+    out: 1,
+    // 外置采集器
+    unknow: 2 // 都不是
+  });
+  module.exports.DeviceType = DeviceType;
+  module.exports.SupportedConnectType = SupportedConnectType;
+  module.exports.DevicePosition = DevicePosition;
+},20000005,[]);
+__d(function(global, require, _importDefaultUnused, _importAllUnused, module, exports, _dependencyMapUnused) {
+  module.exports = {
+    "deviceSteps": {
+        "YTL": ["AddUser", "AddStation", "AddDevice", "UpgradeDataLogger", "UpgradeDevice",
+         "NetConfig", "QuickSetup", "InstallationDiagnosis", "StationPictures",
+          "InstallationInformation"],
+        "RGL": ["AddUser", "AddStation", "AddDevice", "UpgradeDataLogger", "NetConfig",
+         "QuickSetup", "InstallationDiagnosis", "InstallationInformation"],
+        "ZVL": ["AddUser", "AddStation", "AddDevice", "NetConfig", "QuickSetup",
+         "InstallationDiagnosis", "StationPictures", "InstallationInformation"],
+        "AAM": ["AddUser", "AddStation", "AddDevice", "NetConfig", "InstallationInformation"]
+    },
+    "steps" : [
+      {
+        "isFinished" : false,
+        "id" : "AddUser",
+        "isSelected" : false,
+        "name" : "添加用户",
+        "stepIndex" : 1
+      },
+      {
+        "isFinished" : false,
+        "id" : "AddStation",
+        "isSelected" : false,
+        "name" : "添加电站",
+        "stepIndex" : 2
+      },
+      {
+        "isFinished" : false,
+        "id" : "AddDevice",
+        "isSelected" : false,
+        "name" : "添加设备",
+        "stepIndex" : 3
+      },
+      {
+        "isFinished" : false,
+        "id" : "UpgradeDataLogger",
+        "isSelected" : false,
+        "name" : "采集器升级",
+        "stepIndex" : 4
+      },
+      {
+        "isFinished" : false,
+        "id" : "UpgradeDevice",
+        "isSelected" : false,
+        "name" : "设备升级",
+        "stepIndex" : 5
+      },
+      {
+        "isFinished" : false,
+        "id" : "NetConfig",
+        "isSelected" : false,
+        "name" : "网络配置",
+        "stepIndex" : 6
+      },
+      {
+        "isFinished" : false,
+        "id" : "QuickSetup",
+        "isSelected" : false,
+        "name" : "快速设置",
+        "stepIndex" : 7
+      },
+      {
+        "isFinished" : false,
+        "id" : "InstallationDiagnosis",
+        "isSelected" : false,
+        "name" : "安装诊断",
+        "stepIndex" : 8
+      },
+      {
+        "isFinished" : false,
+        "id" : "StationPictures",
+        "isSelected" : false,
+        "name" : "电站照片",
+        "stepIndex" : 9
+      },
+      {
+        "isFinished" : false,
+        "id" : "InstallationInformation",
+        "isSelected" : false,
+        "name" : "安装信息",
+        "stepIndex" : 10
+      }
+    ]
+  };
+},20000006,[]);
+__r(64);
+__r(20000000);
